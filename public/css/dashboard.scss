@@ -1,0 +1,313 @@
+$colors:(
+    'primary': #00B9FF,
+    'nav':#34495E,
+);
+
+@function color($color_name){
+    @return map-get($colors,$color_name);
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: none;
+}
+
+.btn-blue{
+    background: color('nav');
+    color: #FFF;
+    display: inline-block;
+    border-radius: 6px;
+    font-weight: 500;
+    padding: 0.6em 1.5em;
+}
+
+.btn-blue:hover{
+    color: #FFF;
+    background: color('primary');
+    transition: all 200ms;
+}
+
+/* UPLOAD BUTTON FOR FORUMS */
+.upload-btn-wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+}
+
+.upload-btn {
+  border: 2px solid gray;
+  color: gray;
+  background-color: white;
+  padding: 8px 20px;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.upload-btn-wrapper input[type=file] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+
+/* PAGINATION STYLES */
+
+.pagination-div{
+    nav{
+        display: inline-block;
+    }
+}
+
+/* ----------------------------------
+    DASHBOARD MENU STYLES
+-------------------------------------- */
+
+.dashboard-nav{
+    background: color('nav');
+    min-height: 100vh;
+    color: #EEEEEE;
+    box-shadow: 0 0 15px rgba($color: #000000, $alpha: 0.5);
+    padding: 1em 0 0 0;
+    #logo{
+        max-width: 80%;
+        display: block;
+        margin: 0 auto;
+        padding: 0 0 0.8em 0;
+    }
+    #avatar{
+        width: 6vw;
+        display: block;
+        margin: 0 auto;
+        border-radius: 20%;
+    }
+    hr{
+        background: #78828B;
+        width: 90%;
+    }
+}
+
+.dashboard-menu{
+    ul{
+        padding: 0 0 0 2em;
+        li{
+            display: flex;
+            margin: 0 0 1em 0;
+            .menu-icon{
+                margin: 0 0.5em 0 0;
+                align-self: center;
+                width: 1em;
+            }
+            a{
+                color: #EEEEEE;
+                font-size: 1em;
+                letter-spacing: 1px;
+                align-self: center;
+            }
+        }
+    }
+    .li-sub-menu{
+        font-size: 14px;
+        margin: -1em 0 0 1em;
+        padding: 0.3em;
+        max-width: 80%;
+        border-radius: 5px;
+        text-align: center;
+        display: block;
+    }
+
+    .sub-menu-active{
+        background: #17212b;
+    }
+}
+
+.menu-active{
+    background: #17212B;
+    padding: 0.5em 1em;
+    border-radius: 3px;
+    width: 88%
+}
+
+/* ----------------------------------
+    DASHBOARD STYLES
+-------------------------------------- */
+
+.dashboard-page-header{
+    background: linear-gradient(to left,#F56EFF,#175ABF);
+    padding: 1.5em;
+    border-radius: 8px;
+    h2{
+        text-align: center;
+        color: #FFF;
+        text-transform: uppercase;
+        font-family: 'Raleway',sans-serif;
+        font-weight: 500;
+        text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    }
+}
+
+.dashboard-page{
+    .welcome-col{
+        background: linear-gradient(to left,#F56EFF,#175ABF);
+        margin: 3em;
+        padding: 3em;
+        border-radius: 8px;
+        h1{
+            text-align: center;
+            color: #FFF;
+            text-transform: uppercase;
+            font-family: 'Raleway',sans-serif;
+            font-weight: 500;
+            text-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        }
+    }
+
+    .dashboard-cards-row{
+        padding: 0 2em;
+        .dashboard-card{
+            padding: 0.5em 0.8em;
+            .card-inner{
+                background: #F5F5F5;
+                border-radius: 8px;
+                box-shadow: 3px 4px 6px rgba($color: #000000, $alpha: 0.1);
+                padding: 0.5em 0;
+            }
+            .card-icon{
+                display: block;
+                margin: 0 auto;
+                padding: 1.2em 0 0 0;
+                width: 4em;
+            }
+            h4{
+                color: color('primary');
+                font-weight: 500;
+                font-size: 1.2em;
+                letter-spacing: 1px;
+                padding: 1em 0 0.5em 0;
+            }
+            .count-div{
+                width: 6em;
+                position: relative;
+                display: block;
+                margin: 0 auto;
+                p{
+                    margin: 0;
+                    position: absolute;
+                    top: 30%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-weight: 500;
+                    color: #263238;
+                    font-size: 1.3em;
+                }
+                padding: 0 0 0.5em;
+            }
+        }
+    }
+
+    .dashboard-links-row{
+        padding: 1em 2em;
+        div a{
+            margin: 0.5em 0 0 0;
+            box-shadow: 2px 3px 10px rgba($color: #000000, $alpha: 0.16);
+        }
+    }
+}
+
+/* ----------------------------------
+    Pages Defualt Styles
+-------------------------------------- */
+
+.page{
+    .user-avatar{
+        width: 3em;
+    }
+
+    #preview-img{
+        max-width: 10vw;
+    }
+
+    .required-icon{
+        color: red;
+    }
+
+    .action-btn-div{
+        .edit{
+            path {
+                stroke: #008b8b;
+            }
+        }
+        .delete{
+            path,polyline{
+                stroke: #FF375B;
+            }
+        }
+        .restore{
+            path,polyline{
+                stroke: #3f51b5;
+            }
+        }
+    }
+
+    .empty-row{
+        padding: 5em;
+        .empty-content-col{
+            text-align: center;
+            padding: 2em;
+            background: #EEE;
+            box-shadow: 1px 2px 9px rgba(0, 0, 0, 0.15);
+            h2{
+                letter-spacing: 3px;
+                font-size: 1.5em;
+                color: #34495e;
+            }
+        }
+    }
+}
+
+/* ----------------------------------
+    COMOFRMATION DIALOG BOX STYLES
+-------------------------------------- */
+
+.dialog-box{
+    display: none;
+    position: fixed;
+    top: 0%;
+    left: 0%;
+    background: rgba($color: #000000, $alpha: 0.3);
+    width: 99vw;
+    height: 100vh;
+
+    .dialog-box-inner{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        min-width: 40vw;
+        background: color('nav');
+        border-radius: 5px;
+        box-shadow: 2px 3px 10px rgba($color: #000000, $alpha: 0.2);
+        text-align: center;
+        color: #FFF;
+        padding: 2em;
+
+        .dialog-header, .dialog-body, .dialog-footer{
+            padding: 0.5em 0 0 0;
+        }
+    }
+}
