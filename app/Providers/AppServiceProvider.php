@@ -35,14 +35,14 @@ class AppServiceProvider extends ServiceProvider
          * Share Auth User To All Views
          */
         view()->composer('*', function ($view) {
-            $view->with('admin',Auth::user());
+            //$view->with('admin',Auth::user());
         });
 
 
         /**
          * Get Settings Option And Value Form DB
          * Then Add Key And Value As Array
-         */
+
         $settings = Setting::all();
         $settingsArray = array();
 
@@ -51,8 +51,8 @@ class AppServiceProvider extends ServiceProvider
         }
 
         $arrayObj = (object)$settingsArray;
-
-        View::share('settings',$arrayObj);
+        */
+        //View::share('settings',$arrayObj);
 
     }
 }
