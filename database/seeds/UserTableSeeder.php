@@ -22,7 +22,7 @@ class UserTableSeeder extends Seeder
         ]);
 
         $profile = Profile::create([
-            'avatar' => env('ADMIN_DEFAULT_AVATAR_PATH'),
+            'avatar' => "",
             'full_name' => 'Admin Cyber',
             'about' => 'I\'m The Admin',
             'user_id' => $user->id
@@ -36,11 +36,10 @@ class UserTableSeeder extends Seeder
         ]);
 
         $profile2 = Profile::create([
-            'avatar' => env('USER_DEFAULT_AVATAR_PATH'),
+            'avatar' => "",
             'full_name' => 'Alen Walker',
             'about' => 'I\'m The Alen',
             'user_id' => $user2->id
         ]);
-
     }
 }

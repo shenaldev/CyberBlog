@@ -30,29 +30,12 @@ class AppServiceProvider extends ServiceProvider
         //
         Schema::defaultStringLength(244);
 
-        /**
-         *
-         * Share Auth User To All Views
-         */
-        view()->composer('*', function ($view) {
-            //$view->with('admin',Auth::user());
-        });
-
-
-        /**
-         * Get Settings Option And Value Form DB
-         * Then Add Key And Value As Array
-
-        $settings = Setting::all();
-        $settingsArray = array();
-
-        foreach($settings as $setting){
-            $settingsArray[$setting->option] = $setting->value;
-        }
-
-        $arrayObj = (object)$settingsArray;
-        */
-        //View::share('settings',$arrayObj);
-
+        config([
+            'global' => Setting::all([
+                'option', 'value'
+            ])->keyBy('option')->transform(function ($setting) {
+                return $setting->value;
+            })->toArray()
+        ]);
     }
 }
